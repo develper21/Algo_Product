@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <defs>
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4F46E5;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7C3AED;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Main hexagon shape representing algorithm/product -->
+  <path d="M16 2 L28 9 L28 23 L16 30 L4 23 L4 9 Z" fill="url(#logoGradient)" stroke="#4F46E5" stroke-width="1"/>
+  
+  <!-- Inner geometric pattern representing algorithm -->
+  <g transform="translate(16,16)">
+    <!-- Center circle -->
+    <circle cx="0" cy="0" r="3" fill="white" opacity="0.9"/>
+    
+    <!-- Connecting lines representing algorithm connections -->
+    <line x1="0" y1="-3" x2="0" y2="-8" stroke="white" stroke-width="1.5" opacity="0.8"/>
+    <line x1="0" y1="3" x2="0" y2="8" stroke="white" stroke-width="1.5" opacity="0.8"/>
+    <line x1="-3" y1="0" x2="-8" y2="0" stroke="white" stroke-width="1.5" opacity="0.8"/>
+    <line x1="3" y1="0" x2="8" y2="0" stroke="white" stroke-width="1.5" opacity="0.8"/>
+    
+    <!-- Corner nodes -->
+    <circle cx="0" cy="-8" r="2" fill="white" opacity="0.7"/>
+    <circle cx="0" cy="8" r="2" fill="white" opacity="0.7"/>
+    <circle cx="-8" cy="0" r="2" fill="white" opacity="0.7"/>
+    <circle cx="8" cy="0" r="2" fill="white" opacity="0.7"/>
+  </g>
+</svg>
