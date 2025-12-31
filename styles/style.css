@@ -50,14 +50,14 @@ body {
     color: var(--text-primary);
     background-color: var(--bg-secondary);
     line-height: 1.6;
-    font-size: 14px; /* Standard E-com font size */
+    font-size: 14px;
     -webkit-font-smoothing: antialiased;
 }
 
 .container {
     max-width: 1248px;
     margin: 0 auto;
-    padding: 0 10px;
+    padding: 0 15px;
 }
 
 /* ===================================
@@ -70,14 +70,14 @@ body {
     top: 0;
     z-index: 1001;
     color: white;
-    padding: 10px 0;
+    padding: 12px 0;
 }
 
 .navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 20px;
+    gap: 30px;
 }
 
 .logo {
@@ -85,6 +85,7 @@ body {
     flex-direction: column;
     cursor: pointer;
     min-width: 130px;
+    text-decoration: none;
 }
 
 .logo h1 {
@@ -97,31 +98,42 @@ body {
 }
 
 .logo-tagline {
-    font-size: 10px;
+    font-size: 11px;
     color: var(--accent-color);
     font-weight: 600;
     font-style: italic;
-    margin-top: 2px;
+    margin-top: 4px;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.logo-tagline span {
+    color: white;
+    font-weight: 400;
+}
+
+.search-bar-container {
+    flex: 1;
+    max-width: 600px;
+    position: relative;
 }
 
 .search-bar {
-    flex: 1;
-    max-width: 600px;
     display: flex;
     align-items: center;
     background: white;
     border-radius: var(--radius-sm);
     box-shadow: var(--shadow-sm);
-    overflow: visible; /* To allow menu trigger hover */
-    position: relative;
+    height: 40px;
 }
 
 .menu-trigger {
-    background: white;
+    background: transparent;
     border: none;
     border-right: 1px solid var(--border-light);
-    width: 44px;
-    height: 36px;
+    width: 48px;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -138,7 +150,7 @@ body {
     flex: 1;
     display: flex;
     align-items: center;
-    height: 36px;
+    height: 100%;
 }
 
 .search-input {
@@ -161,6 +173,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 100%;
 }
 
 .nav-actions {
@@ -178,37 +191,36 @@ body {
     font-weight: 600;
     font-size: 15px;
     transition: opacity 0.2s;
-    position: relative;
-    border: none;
-    padding: 0;
-    background: none;
 }
 
 .nav-btn:hover {
-    opacity: 0.8;
-    transform: none;
-    box-shadow: none;
-    color: white;
+    opacity: 0.9;
+}
+
+.cart-btn {
+    position: relative;
 }
 
 .cart-count {
     background: var(--secondary-color);
     color: white;
-    font-size: 11px;
-    font-weight: 700;
-    padding: 2px 6px;
-    border-radius: 2px;
-    margin-left: -4px;
-    position: static;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 1px 5px;
+    border-radius: 10px;
+    position: absolute;
+    top: -8px;
+    left: 15px;
+    border: 2px solid var(--header-bg);
 }
 
 /* ===================================
-   FULLSCREEN CATEGORY MENU (HOVER)
+   FULLSCREEN CATEGORY MENU
    =================================== */
 
 .category-overlay {
     position: fixed;
-    top: 56px; /* Header height approx */
+    top: 64px;
     left: 0;
     width: 100%;
     height: 0;
@@ -216,37 +228,32 @@ body {
     z-index: 1000;
     overflow: hidden;
     transition: height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border-top: 1px solid rgba(0,0,0,0.05);
 }
 
-/* Logic for hover trigger */
-.search-bar:hover ~ .category-overlay,
-.menu-trigger:hover ~ .category-overlay,
+/* Category menu visibility logic */
+.search-bar-container:hover .category-overlay,
 .category-overlay:hover {
-    height: 400px;
+    height: 420px;
 }
-
-/* Since overlay is not a sibling of menu-trigger in the original HTML, 
-   we need to adjust the HTML or use JS. 
-   I'll update the HTML to put the overlay inside the header or right after search-bar.
-*/
 
 .category-menu-content {
     max-width: 1248px;
     margin: 0 auto;
-    padding: 30px 20px;
+    padding: 40px 20px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
+    gap: 40px;
 }
 
 .category-column h4 {
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 700;
     color: var(--text-primary);
     margin-bottom: 20px;
-    border-bottom: 1px solid var(--border-light);
-    padding-bottom: 10px;
+    border-bottom: 2px solid var(--primary-light);
+    padding-bottom: 12px;
 }
 
 .category-list {
@@ -255,7 +262,7 @@ body {
 }
 
 .category-list li {
-    margin-bottom: 12px;
+    margin-bottom: 14px;
 }
 
 .category-item {
@@ -265,37 +272,46 @@ body {
     font-weight: 500;
     display: flex;
     align-items: center;
-    gap: 8px;
-    transition: color 0.2s;
+    gap: 10px;
+    transition: all 0.2s;
 }
 
 .category-item:hover {
     color: var(--primary-color);
-    transform: none;
+    padding-left: 5px;
 }
 
 .category-item .icon {
-    font-size: 16px;
-    width: auto;
-    height: auto;
-    background: transparent;
+    font-size: 18px;
+    filter: grayscale(1);
+    transition: filter 0.2s;
+}
+
+.category-item:hover .icon {
+    filter: grayscale(0);
 }
 
 /* ===================================
    SUB-HEADER
    =================================== */
+
 .sub-header {
     background: var(--sub-header-bg);
     border-bottom: 1px solid var(--border-light);
     box-shadow: var(--shadow-sm);
-    display: block;
+    padding: 4px 0;
 }
 
 .sub-header-nav {
     display: flex;
     align-items: center;
-    gap: 25px;
-    padding: 12px 0;
+    gap: 30px;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.sub-header-nav::-webkit-scrollbar {
+    display: none;
 }
 
 .sub-nav-item {
@@ -303,9 +319,10 @@ body {
     color: var(--text-primary);
     font-weight: 500;
     font-size: 14px;
-    display: flex;
-    align-items: center;
-    gap: 4px;
+    padding: 10px 0;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
 }
 
 .sub-nav-item:hover {
@@ -317,38 +334,101 @@ body {
    =================================== */
 
 .hero-carousel {
-    height: 300px; /* Amazon style shorter banners */
-    background: #f1f3f6;
-    margin-bottom: 20px;
+    height: 280px;
+    margin: 10px auto;
+    max-width: 1248px;
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-container {
+    height: 100%;
+    position: relative;
+}
+
+.carousel-track {
+    display: flex;
+    height: 100%;
+    transition: transform 0.5s ease;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    height: 100%;
+    position: relative;
 }
 
 .carousel-slide img {
-    filter: none;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
 }
 
 .carousel-slide .slide-content {
-    background: rgba(255, 255, 255, 0.9);
-    padding: 20px;
-    border-radius: var(--radius-sm);
-    color: var(--text-primary);
-    max-width: 400px;
-    box-shadow: var(--shadow-lg);
+    position: absolute;
+    top: 50%;
+    left: 80px;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: var(--radius-md);
+    max-width: 450px;
+    box-shadow: var(--shadow-xl);
+}
+
+.slide-badge {
+    display: inline-block;
+    background: var(--primary-color);
+    color: white;
+    padding: 4px 12px;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 4px;
+    margin-bottom: 15px;
 }
 
 .slide-title {
-    font-size: 32px;
+    font-size: 36px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 10px;
     color: var(--text-primary);
-    letter-spacing: -1px;
 }
 
 .slide-description {
     font-size: 16px;
     color: var(--text-secondary);
+    margin-bottom: 15px;
 }
 
 .slide-price {
+    font-size: 18px;
+    font-weight: 700;
     color: var(--success-color);
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.dot.active {
+    width: 24px;
+    border-radius: 4px;
+    background: var(--primary-color);
 }
 
 /* ===================================
@@ -356,72 +436,159 @@ body {
    =================================== */
 
 .main-content {
-    padding: 10px 0;
+    padding: 10px 0 40px;
+}
+
+.products-wrapper {
+    background: white;
+    padding: 20px;
+    box-shadow: var(--shadow-sm);
 }
 
 .products-header {
-    background: white;
-    padding: 15px 20px;
-    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
     border-bottom: 1px solid var(--border-light);
+    margin-bottom: 20px;
 }
 
 .section-title {
-    font-size: 20px;
-    font-weight: 600;
+    font-size: 22px;
+    font-weight: 700;
 }
 
 .products-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 10px;
-    background: white;
-    padding: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 20px;
 }
 
 .product-card {
-    border-radius: 0;
     border: 1px solid transparent;
     padding: 15px;
+    background: white;
+    transition: all 0.3s;
+    cursor: pointer;
     display: flex;
     flex-direction: column;
 }
 
 .product-card:hover {
-    transform: none;
-    box-shadow: var(--shadow-lg);
     border-color: var(--border-light);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .product-image-container {
+    position: relative;
+    width: 100%;
     padding-top: 100%;
     margin-bottom: 15px;
-    background: white;
 }
 
 .product-image {
-    padding: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.5s;
+}
+
+.product-card:hover .product-image {
+    transform: scale(1.05);
+}
+
+.wishlist-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: white;
+    border: 1px solid var(--border-light);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2;
+    color: #dbdbdb;
+    transition: all 0.2s;
+}
+
+.wishlist-icon:hover, .wishlist-icon.active {
+    color: var(--error-color);
+    border-color: var(--error-color);
+}
+
+.product-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .product-name {
     font-size: 14px;
     font-weight: 500;
+    color: var(--text-primary);
     margin-bottom: 8px;
-    min-height: 40px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    height: 36px;
+}
+
+.product-rating {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.rating-badge {
+    background: var(--success-color);
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.rating-count {
+    color: var(--text-secondary);
+    font-size: 12px;
+}
+
+.product-price {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: auto;
 }
 
 .price-current {
     font-size: 18px;
-    font-weight: 700;
+    font-weight: 800;
+    color: var(--text-primary);
+}
+
+.price-old {
+    font-size: 13px;
+    color: var(--text-secondary);
+    text-decoration: line-through;
 }
 
 .price-off {
-    font-weight: 500;
-}
-
-.rating-badge {
-    padding: 2px 6px;
-    font-size: 12px;
+    font-size: 13px;
+    color: var(--success-color);
+    font-weight: 700;
 }
 
 /* ===================================
@@ -430,62 +597,97 @@ body {
 
 .footer {
     background: #172337;
-    margin-top: 40px;
+    color: white;
+    padding: 60px 0 20px;
 }
 
-.footer-section h3, .footer-section h4 {
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-section h4 {
     color: #878787;
     font-size: 12px;
     font-weight: 400;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
 }
 
 .footer-links a {
     color: white;
+    text-decoration: none;
     font-size: 12px;
+    font-weight: 600;
+    transition: opacity 0.2s;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
 }
 
 .footer-bottom {
     border-top: 1px solid #2e3e50;
-    background: #172337;
+    padding-top: 20px;
+    text-align: center;
+    color: #878787;
+    font-size: 12px;
 }
 
-.toast-info {
-    border-left-color: var(--primary-color);
+/* Toast Notifications */
+.notification-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 2000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
-.toast-progress {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 3px;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.05);
+.toast {
+    background: white;
+    color: var(--text-primary);
+    padding: 12px 20px;
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-xl);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 300px;
+    animation: slideIn 0.3s ease;
+    border-left: 4px solid var(--primary-color);
+    position: relative;
+    overflow: hidden;
 }
 
-.toast-progress-bar {
-    height: 100%;
-    width: 100%;
-    background: var(--primary-color);
-    transition: width linear;
+.toast-success { border-left-color: var(--success-color); }
+.toast-error { border-left-color: var(--error-color); }
+
+@keyframes slideIn {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
 }
 
-.toast-success .toast-progress-bar {
-    background: var(--success-color);
+@media (max-width: 1024px) {
+    .navbar { gap: 15px; }
+    .footer-content { grid-template-columns: repeat(2, 1fr); }
 }
 
-.toast-error .toast-progress-bar {
-    background: var(--error-color);
-}
-
-@media (max-width: 480px) {
-    .notification-container {
-        top: 20px;
-        right: 16px;
-        left: 16px;
-    }
-
-    .toast {
-        min-width: auto;
-        width: 100%;
-    }
+@media (max-width: 768px) {
+    .nav-actions span { display: none; }
+    .carousel-slide .slide-content { left: 20px; max-width: 300px; padding: 20px; }
+    .slide-title { font-size: 24px; }
+    .category-menu-content { grid-template-columns: repeat(2, 1fr); }
 }

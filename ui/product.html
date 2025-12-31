@@ -26,68 +26,70 @@
                     </a>
                 </div>
 
-                <div class="search-bar">
-                    <button class="menu-trigger" id="menuTrigger" title="Categories">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <line x1="3" y1="12" x2="21" y2="12"></line>
-                            <line x1="3" y1="6" x2="21" y2="6"></line>
-                            <line x1="3" y1="18" x2="21" y2="18"></line>
-                        </svg>
-                    </button>
-                    <div class="search-input-wrapper">
-                        <input type="text" id="searchInput" placeholder="Search for products, brands and more..."
-                            class="search-input">
-                        <button class="search-btn">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                <div class="search-bar-container">
+                    <div class="search-bar">
+                        <button class="menu-trigger" id="menuTrigger" title="Categories">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2">
-                                <circle cx="11" cy="11" r="8"></circle>
-                                <path d="m21 21-4.35-4.35"></path>
+                                <line x1="3" y1="12" x2="21" y2="12"></line>
+                                <line x1="3" y1="6" x2="21" y2="6"></line>
+                                <line x1="3" y1="18" x2="21" y2="18"></line>
                             </svg>
                         </button>
+                        <div class="search-input-wrapper">
+                            <input type="text" id="searchInput" placeholder="Search for products, brands and more..."
+                                class="search-input">
+                            <button class="search-btn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <circle cx="11" cy="11" r="8"></circle>
+                                    <path d="m21 21-4.35-4.35"></path>
+                                </svg>
+                            </button>
+                        </div>
                     </div>
-                </div>
 
-                <!-- Fullscreen Category Menu -->
-                <div class="category-overlay" id="categoryOverlay">
-                    <div class="category-menu-content">
-                        <div class="category-column">
-                            <h4>Fashion & Lifestyle</h4>
-                            <ul class="category-list">
-                                <li><a href="#" class="category-item" data-category="Men's Clothing"><span class="icon">👕</span> Men's Wear</a></li>
-                                <li><a href="#" class="category-item" data-category="Women's Clothing"><span class="icon">👗</span> Women's Wear</a></li>
-                                <li><a href="#" class="category-item" data-category="Kids' Wear"><span class="icon">👶</span> Kids' Collection</a></li>
-                                <li><a href="#" class="category-item" data-category="Footwear"><span class="icon">👟</span> Footwear</a></li>
-                                <li><a href="#" class="category-item" data-category="Watches"><span class="icon">⌚</span> Watches</a></li>
-                            </ul>
-                        </div>
-                        <div class="category-column">
-                            <h4>Electronics & Gadgets</h4>
-                            <ul class="category-list">
-                                <li><a href="#" class="category-item" data-category="Mobiles"><span class="icon">📱</span> Smartphones</a></li>
-                                <li><a href="#" class="category-item" data-category="Laptops"><span class="icon">💻</span> Laptops</a></li>
-                                <li><a href="#" class="category-item" data-category="Audio"><span class="icon">🎧</span> Headphones & Audio</a></li>
-                                <li><a href="#" class="category-item" data-category="Cameras"><span class="icon">📷</span> Cameras</a></li>
-                                <li><a href="#" class="category-item" data-category="Accessories"><span class="icon">🔌</span> Tech Accessories</a></li>
-                            </ul>
-                        </div>
-                        <div class="category-column">
-                            <h4>Home & Kitchen</h4>
-                            <ul class="category-list">
-                                <li><a href="#" class="category-item" data-category="Home Decor"><span class="icon">🖼️</span> Home Decor</a></li>
-                                <li><a href="#" class="category-item" data-category="Furniture"><span class="icon">🛋️</span> Furniture</a></li>
-                                <li><a href="#" class="category-item" data-category="Kitchen Appliances"><span class="icon">🍳</span> Kitchen Gear</a></li>
-                                <li><a href="#" class="category-item" data-category="Home Lighting"><span class="icon">💡</span> Lighting</a></li>
-                            </ul>
-                        </div>
-                        <div class="category-column">
-                            <h4>Sports & Fitness</h4>
-                            <ul class="category-list">
-                                <li><a href="#" class="category-item" data-category="Gym Equipment"><span class="icon">🏋️</span> Gym Equipment</a></li>
-                                <li><a href="#" class="category-item" data-category="Sports Wear"><span class="icon">⚽</span> Sports Apparel</a></li>
-                                <li><a href="#" class="category-item" data-category="Outdoor"><span class="icon">🏕️</span> Outdoor & Camping</a></li>
-                                <li><a href="#" class="category-item" data-category="Cycle"><span class="icon">🚲</span> Bicycles</a></li>
-                            </ul>
+                    <!-- Fullscreen Category Menu -->
+                    <div class="category-overlay" id="categoryOverlay">
+                        <div class="category-menu-content">
+                            <div class="category-column">
+                                <h4>Fashion & Lifestyle</h4>
+                                <ul class="category-list">
+                                    <li><a href="#" class="category-item" data-category="Men's Clothing"><span class="icon">👕</span> Men's Wear</a></li>
+                                    <li><a href="#" class="category-item" data-category="Women's Clothing"><span class="icon">👗</span> Women's Wear</a></li>
+                                    <li><a href="#" class="category-item" data-category="Kids' Wear"><span class="icon">👶</span> Kids' Collection</a></li>
+                                    <li><a href="#" class="category-item" data-category="Footwear"><span class="icon">👟</span> Footwear</a></li>
+                                    <li><a href="#" class="category-item" data-category="Watches"><span class="icon">⌚</span> Watches</a></li>
+                                </ul>
+                            </div>
+                            <div class="category-column">
+                                <h4>Electronics & Gadgets</h4>
+                                <ul class="category-list">
+                                    <li><a href="#" class="category-item" data-category="Mobiles"><span class="icon">📱</span> Smartphones</a></li>
+                                    <li><a href="#" class="category-item" data-category="Laptops"><span class="icon">💻</span> Laptops</a></li>
+                                    <li><a href="#" class="category-item" data-category="Audio"><span class="icon">🎧</span> Headphones & Audio</a></li>
+                                    <li><a href="#" class="category-item" data-category="Cameras"><span class="icon">📷</span> Cameras</a></li>
+                                    <li><a href="#" class="category-item" data-category="Accessories"><span class="icon">🔌</span> Tech Accessories</a></li>
+                                </ul>
+                            </div>
+                            <div class="category-column">
+                                <h4>Home & Kitchen</h4>
+                                <ul class="category-list">
+                                    <li><a href="#" class="category-item" data-category="Home Decor"><span class="icon">🖼️</span> Home Decor</a></li>
+                                    <li><a href="#" class="category-item" data-category="Furniture"><span class="icon">🛋️</span> Furniture</a></li>
+                                    <li><a href="#" class="category-item" data-category="Kitchen Appliances"><span class="icon">🍳</span> Kitchen Gear</a></li>
+                                    <li><a href="#" class="category-item" data-category="Home Lighting"><span class="icon">💡</span> Lighting</a></li>
+                                </ul>
+                            </div>
+                            <div class="category-column">
+                                <h4>Sports & Fitness</h4>
+                                <ul class="category-list">
+                                    <li><a href="#" class="category-item" data-category="Gym Equipment"><span class="icon">🏋️</span> Gym Equipment</a></li>
+                                    <li><a href="#" class="category-item" data-category="Sports Wear"><span class="icon">⚽</span> Sports Apparel</a></li>
+                                    <li><a href="#" class="category-item" data-category="Outdoor"><span class="icon">🏕️</span> Outdoor & Camping</a></li>
+                                    <li><a href="#" class="category-item" data-category="Cycle"><span class="icon">🚲</span> Bicycles</a></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
