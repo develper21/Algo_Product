@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Search for products across all categories. Find exactly what you're looking for.">
+    <title>Search Results - AlgoProduct</title>
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="index.html" style="text-decoration: none; color: inherit;">
+                        <h1>AlgoShop</h1>
+                        <span class="logo-tagline">Explore Plus+</span>
+                    </a>
+                </div>
+
+                <div class="search-bar-container">
+                    <div class="search-bar">
+                        <button class="menu-trigger" id="menuTrigger" title="Categories">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <line x1="3" y1="12" x2="21" y2="12"></line>
+                                <line x1="3" y1="6" x2="21" y2="6"></line>
+                                <line x1="3" y1="18" x2="21" y2="18"></line>
+                            </svg>
+                        </button>
+                        <div class="search-input-wrapper">
+                            <input type="text" id="searchInput" placeholder="Search for products, brands and more..."
+                                class="search-input">
+                            <button class="search-btn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <circle cx="11" cy="11" r="8"></circle>
+                                    <path d="m21 21-4.35-4.35"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nav-actions">
+                    <a href="wishlist.html" class="nav-btn wishlist-btn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path
+                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                            </path>
+                        </svg>
+                        <span>Wishlist</span>
+                    </a>
+                    <a href="cart.html" class="nav-btn cart-btn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="9" cy="21" r="1"></circle>
+                            <circle cx="20" cy="21" r="1"></circle>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                        </svg>
+                        <span>Cart</span>
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index.html">Home</a>
+            <span class="separator">/</span>
+            <span>Search Results</span>
+        </div>
+    </div>
+
+    <!-- Search Results -->
+    <main class="search-page">
+        <div class="container">
+            <div class="search-header">
+                <div class="search-info">
+                    <h1 class="page-title">Search Results</h1>
+                    <p class="search-query" id="searchQuery">Searching for...</p>
+                    <p class="results-count" id="resultsCount">0 results found</p>
+                </div>
+                <div class="search-controls">
+                    <div class="sort-controls">
+                        <label for="sortSelect">Sort by:</label>
+                        <select id="sortSelect" onchange="applySearchFilters()">
+                            <option value="relevant">Most Relevant</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="rating">Customer Rating</option>
+                            <option value="newest">Newest First</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Search Suggestions -->
+            <div class="search-suggestions" id="searchSuggestions" style="display: none;">
+                <h3>No results found for "<span id="noResultsQuery"></span>"</h3>
+                <p>Here are some suggestions:</p>
+                <ul>
+                    <li>Check your spelling</li>
+                    <li>Try more general keywords</li>
+                    <li>Try different keywords</li>
+                    <li>Browse our popular categories</li>
+                </ul>
+                <div class="popular-categories">
+                    <h4>Popular Categories</h4>
+                    <div class="category-links">
+                        <a href="electronics.html">Electronics</a>
+                        <a href="fashion.html">Fashion</a>
+                        <a href="home.html">Home & Kitchen</a>
+                        <a href="sports.html">Sports</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="products-grid" id="searchResultsGrid">
+                <!-- Products will be loaded dynamically -->
+            </div>
+
+            <!-- No Results -->
+            <div class="no-products" id="noSearchResults" style="display: none;">
+                <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                </svg>
+                <h3>No products found</h3>
+                <p>Try adjusting your search terms or browse our categories</p>
+                <a href="index.html" class="btn btn-primary">Continue Shopping</a>
+            </div>
+
+            <!-- Load More -->
+            <div class="load-more-container" id="loadMoreContainer" style="display: none;">
+                <button class="btn btn-outline" id="loadMoreBtn" onclick="loadMoreResults()">
+                    Load More Products
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <!-- Back to Top -->
+        <div class="back-to-top" id="backToTop">
+            <span>Back to top</span>
+        </div>
+
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h4>ABOUT</h4>
+                        <ul class="footer-links">
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">AlgoShop Stories</a></li>
+                            <li><a href="#">Press</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-section">
+                        <h4>HELP</h4>
+                        <ul class="footer-links">
+                            <li><a href="#">Payments</a></li>
+                            <li><a href="#">Shipping</a></li>
+                            <li><a href="#">Cancellation & Returns</a></li>
+                            <li><a href="#">FAQ</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-section">
+                        <h4>CONSUMER POLICY</h4>
+                        <ul class="footer-links">
+                            <li><a href="#">Terms Of Use</a></li>
+                            <li><a href="#">Security</a></li>
+                            <li><a href="#">Privacy</a></li>
+                            <li><a href="#">Sitemap</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <p class="copyright">&copy; 2024-2025 AlgoShop.com</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/scripts/data.js"></script>
+    <script src="/scripts/script.js"></script>
+    <script src="/scripts/search.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse our wide range of electronic products including smartphones, laptops, TVs, and more.">
+    <title>Electronics - AlgoProduct</title>
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="index.html" style="text-decoration: none; color: inherit;">
+                        <h1>AlgoShop</h1>
+                        <span class="logo-tagline">Explore Plus+</span>
+                    </a>
+                </div>
+
+                <div class="search-bar-container">
+                    <div class="search-bar">
+                        <button class="menu-trigger" id="menuTrigger" title="Categories">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <line x1="3" y1="12" x2="21" y2="12"></line>
+                                <line x1="3" y1="6" x2="21" y2="6"></line>
+                                <line x1="3" y1="18" x2="21" y2="18"></line>
+                            </svg>
+                        </button>
+                        <div class="search-input-wrapper">
+                            <input type="text" id="searchInput" placeholder="Search for products, brands and more..."
+                                class="search-input">
+                            <button class="search-btn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <circle cx="11" cy="11" r="8"></circle>
+                                    <path d="m21 21-4.35-4.35"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Fullscreen Category Menu -->
+                    <div class="category-overlay" id="categoryOverlay">
+                        <div class="category-menu-content">
+                            <div class="category-column">
+                                <h4>Fashion & Lifestyle</h4>
+                                <ul class="category-list">
+                                    <li><a href="#" class="category-item" data-category="Men's Clothing"><span class="icon">👕</span> Men's Wear</a></li>
+                                    <li><a href="#" class="category-item" data-category="Women's Clothing"><span class="icon">👗</span> Women's Wear</a></li>
+                                    <li><a href="#" class="category-item" data-category="Kids' Wear"><span class="icon">👶</span> Kids' Collection</a></li>
+                                    <li><a href="#" class="category-item" data-category="Footwear"><span class="icon">👟</span> Footwear</a></li>
+                                    <li><a href="#" class="category-item" data-category="Watches"><span class="icon">⌚</span> Watches</a></li>
+                                </ul>
+                            </div>
+                            <div class="category-column">
+                                <h4>Electronics & Gadgets</h4>
+                                <ul class="category-list">
+                                    <li><a href="#" class="category-item" data-category="Mobiles"><span class="icon">📱</span> Smartphones</a></li>
+                                    <li><a href="#" class="category-item" data-category="Laptops"><span class="icon">💻</span> Laptops</a></li>
+                                    <li><a href="#" class="category-item" data-category="Audio"><span class="icon">🎧</span> Headphones & Audio</a></li>
+                                    <li><a href="#" class="category-item" data-category="Cameras"><span class="icon">📷</span> Cameras</a></li>
+                                    <li><a href="#" class="category-item" data-category="Accessories"><span class="icon">🔌</span> Tech Accessories</a></li>
+                                </ul>
+                            </div>
+                            <div class="category-column">
+                                <h4>Home & Kitchen</h4>
+                                <ul class="category-list">
+                                    <li><a href="#" class="category-item" data-category="Home Decor"><span class="icon">🖼️</span> Home Decor</a></li>
+                                    <li><a href="#" class="category-item" data-category="Furniture"><span class="icon">🛋️</span> Furniture</a></li>
+                                    <li><a href="#" class="category-item" data-category="Kitchen Appliances"><span class="icon">🍳</span> Kitchen Gear</a></li>
+                                    <li><a href="#" class="category-item" data-category="Home Lighting"><span class="icon">💡</span> Lighting</a></li>
+                                </ul>
+                            </div>
+                            <div class="category-column">
+                                <h4>Sports & Fitness</h4>
+                                <ul class="category-list">
+                                    <li><a href="#" class="category-item" data-category="Gym Equipment"><span class="icon">🏋️</span> Gym Equipment</a></li>
+                                    <li><a href="#" class="category-item" data-category="Sports Wear"><span class="icon">⚽</span> Sports Apparel</a></li>
+                                    <li><a href="#" class="category-item" data-category="Outdoor"><span class="icon">🏕️</span> Outdoor & Camping</a></li>
+                                    <li><a href="#" class="category-item" data-category="Cycle"><span class="icon">🚲</span> Bicycles</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nav-actions">
+                    <a href="wishlist.html" class="nav-btn wishlist-btn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path
+                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                            </path>
+                        </svg>
+                        <span>Wishlist</span>
+                    </a>
+                    <a href="cart.html" class="nav-btn cart-btn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="9" cy="21" r="1"></circle>
+                            <circle cx="20" cy="21" r="1"></circle>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                        </svg>
+                        <span>Cart</span>
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Sub Header Nav -->
+    <div class="sub-header">
+        <div class="container">
+            <nav class="sub-header-nav">
+                <a href="electronics.html" class="sub-nav-item active">Electronics</a>
+                <a href="fashion.html" class="sub-nav-item">Fashion</a>
+                <a href="home.html" class="sub-nav-item">Home</a>
+                <a href="beauty.html" class="sub-nav-item">Beauty</a>
+                <a href="sports.html" class="sub-nav-item">Sports</a>
+                <a href="grocery.html" class="sub-nav-item">Grocery</a>
+                <a href="#" class="sub-nav-item" style="color: var(--secondary-color); font-weight: 700;">Offers</a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Category Hero -->
+    <section class="category-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Electronics & Gadgets</h1>
+                <p>Discover the latest in technology with our wide range of smartphones, laptops, TVs, cameras, and more.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Category Filters -->
+    <section class="category-filters">
+        <div class="container">
+            <div class="filters-layout">
+                <div class="filter-sidebar">
+                    <h3>Filters</h3>
+                    
+                    <!-- Subcategories -->
+                    <div class="filter-group">
+                        <h4>Subcategories</h4>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox" value="Mobiles" onchange="applyCategoryFilters()">
+                                <span class="checkmark"></span>
+                                Mobiles & Tablets
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" value="Laptops" onchange="applyCategoryFilters()">
+                                <span class="checkmark"></span>
+                                Laptops & Computers
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" value="Audio" onchange="applyCategoryFilters()">
+                                <span class="checkmark"></span>
+                                Audio & Headphones
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" value="Cameras" onchange="applyCategoryFilters()">
+                                <span class="checkmark"></span>
+                                Cameras & Accessories
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" value="TV" onchange="applyCategoryFilters()">
+                                <span class="checkmark"></span>
+                                TVs & Entertainment
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Price Range -->
+                    <div class="filter-group">
+                        <h4>Price Range</h4>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="radio" name="priceRange" value="0-10000" onchange="applyCategoryFilters()">
+                                <span class="radio-mark"></span>
+                                Under ₹10,000
+                            </label>
+                            <label class="filter-option">
+                                <input type="radio" name="priceRange" value="10000-50000" onchange="applyCategoryFilters()">
+                                <span class="radio-mark"></span>
+                                ₹10,000 - ₹50,000
+                            </label>
+                            <label class="filter-option">
+                                <input type="radio" name="priceRange" value="50000-100000" onchange="applyCategoryFilters()">
+                                <span class="radio-mark"></span>
+                                ₹50,000 - ₹1,00,000
+                            </label>
+                            <label class="filter-option">
+                                <input type="radio" name="priceRange" value="100000+" onchange="applyCategoryFilters()">
+                                <span class="radio-mark"></span>
+                                Above ₹1,00,000
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Brand -->
+                    <div class="filter-group">
+                        <h4>Brand</h4>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox" value="Apple" onchange="applyCategoryFilters()">
+                                <span class="checkmark"></span>
+                                Apple
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" value="Samsung" onchange="applyCategoryFilters()">
+                                <span class="checkmark"></span>
+                                Samsung
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" value="Sony" onchange="applyCategoryFilters()">
+                                <span class="checkmark"></span>
+                                Sony
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" value="Canon" onchange="applyCategoryFilters()">
+                                <span class="checkmark"></span>
+                                Canon
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Rating -->
+                    <div class="filter-group">
+                        <h4>Customer Rating</h4>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox" value="4" onchange="applyCategoryFilters()">
+                                <span class="checkmark"></span>
+                                <div class="rating-stars">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                    </svg>
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                    </svg>
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                    </svg>
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                    </svg>
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                    </svg>
+                                    & up
+                                </div>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" value="3" onchange="applyCategoryFilters()">
+                                <span class="checkmark"></span>
+                                <div class="rating-stars">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                    </svg>
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                    </svg>
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                    </svg>
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                    </svg>
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                    </svg>
+                                    & up
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-outline" onclick="resetCategoryFilters()">Reset Filters</button>
+                </div>
+
+                <!-- Products Grid -->
+                <div class="category-content">
+                    <div class="category-header">
+                        <h2>Electronics</h2>
+                        <div class="sort-controls">
+                            <label for="sortSelect">Sort by:</label>
+                            <select id="sortSelect" onchange="applyCategoryFilters()">
+                                <option value="featured">Featured</option>
+                                <option value="price-low">Price: Low to High</option>
+                                <option value="price-high">Price: High to Low</option>
+                                <option value="rating">Customer Rating</option>
+                                <option value="newest">Newest First</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="products-grid" id="categoryProductsGrid">
+                        <!-- Products will be loaded dynamically -->
+                    </div>
+
+                    <div class="no-products" id="noCategoryProducts" style="display: none;">
+                        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="8" x2="12" y2="12"></line>
+                            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                        </svg>
+                        <h3>No products found</h3>
+                        <p>Try adjusting your filters or search criteria</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <!-- Back to Top -->
+        <div class="back-to-top" id="backToTop">
+            <span>Back to top</span>
+        </div>
+
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h4>ABOUT</h4>
+                        <ul class="footer-links">
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">AlgoShop Stories</a></li>
+                            <li><a href="#">Press</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-section">
+                        <h4>HELP</h4>
+                        <ul class="footer-links">
+                            <li><a href="#">Payments</a></li>
+                            <li><a href="#">Shipping</a></li>
+                            <li><a href="#">Cancellation & Returns</a></li>
+                            <li><a href="#">FAQ</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-section">
+                        <h4>CONSUMER POLICY</h4>
+                        <ul class="footer-links">
+                            <li><a href="#">Terms Of Use</a></li>
+                            <li><a href="#">Security</a></li>
+                            <li><a href="#">Privacy</a></li>
+                            <li><a href="#">Sitemap</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <p class="copyright">&copy; 2024-2025 AlgoShop.com</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/scripts/data.js"></script>
+    <script src="/scripts/script.js"></script>
+    <script src="/scripts/category.js"></script>
+</body>
+
+</html>
