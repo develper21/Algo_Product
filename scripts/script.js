@@ -236,6 +236,17 @@ function initHomepage() {
         applyFilters();
     });
 
+    // Back to top functionality
+    const backToTop = document.getElementById('backToTop');
+    if (backToTop) {
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+
     // Initial render
     renderProducts(products);
     updateCartCount();
