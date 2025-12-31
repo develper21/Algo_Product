@@ -592,20 +592,81 @@ body {
 }
 
 /* ===================================
-   FOOTER
+   FOOTER - PREMIUM THEME
    =================================== */
 
 .footer {
     background: #172337;
     color: white;
-    padding: 60px 0 20px;
+    padding: 0;
+    margin-top: 40px;
+}
+
+.footer-newsletter {
+    background: #2874f0;
+    padding: 24px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.newsletter-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.newsletter-text h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.newsletter-text p {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 10px;
+    flex: 1;
+    max-width: 500px;
+}
+
+.newsletter-input {
+    flex: 1;
+    padding: 12px 16px;
+    border: none;
+    border-radius: var(--radius-sm);
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+}
+
+.newsletter-btn {
+    padding: 0 24px;
+    background: #fb641b;
+    color: white;
+    border: none;
+    border-radius: var(--radius-sm);
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.newsletter-btn:hover {
+    background: #e65a14;
+}
+
+.footer-main {
+    padding: 60px 0 40px;
 }
 
 .footer-content {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 1.5fr repeat(3, 1fr) 1.2fr;
     gap: 40px;
-    margin-bottom: 40px;
 }
 
 .footer-section h4 {
@@ -613,7 +674,46 @@ body {
     font-size: 12px;
     font-weight: 400;
     text-transform: uppercase;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    letter-spacing: 0.5px;
+}
+
+.footer-brand h3 {
+    font-size: 24px;
+    font-weight: 800;
+    font-style: italic;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.footer-brand p {
+    color: #aeaeae;
+    font-size: 13px;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-link {
+    width: 36px;
+    height: 36px;
+    background: #2e3e50;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background: var(--primary-color);
+    transform: translateY(-3px);
 }
 
 .footer-links {
@@ -622,27 +722,95 @@ body {
 }
 
 .footer-links li {
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
 .footer-links a {
     color: white;
     text-decoration: none;
     font-size: 12px;
-    font-weight: 600;
-    transition: opacity 0.2s;
+    font-weight: 400;
+    transition: all 0.2s;
+    display: inline-block;
 }
 
 .footer-links a:hover {
-    text-decoration: underline;
+    color: var(--primary-light);
+    transform: translateX(5px);
+}
+
+.footer-contact-item {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 15px;
+    color: #aeaeae;
+    font-size: 13px;
+}
+
+.footer-contact-item svg {
+    color: var(--primary-color);
+    flex-shrink: 0;
 }
 
 .footer-bottom {
     border-top: 1px solid #2e3e50;
-    padding-top: 20px;
-    text-align: center;
+    padding: 25px 0;
+    background: #172337;
+}
+
+.footer-bottom-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.copyright {
+    color: #aeaeae;
+    font-size: 12px;
+}
+
+.payment-methods {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.payment-methods span {
     color: #878787;
     font-size: 12px;
+    margin-right: 5px;
+}
+
+.payment-icon {
+    height: 20px;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.payment-icon:hover {
+    opacity: 1;
+}
+
+@media (max-width: 1024px) {
+    .newsletter-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+    .footer-bottom-container {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
 }
 
 /* Toast Notifications */
