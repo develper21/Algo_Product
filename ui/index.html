@@ -20,8 +20,8 @@
         <div class="container">
             <nav class="navbar">
                 <div class="logo">
-                    <h1>AlgoProduct</h1>
-                    <span class="logo-tagline">Premium Collection</span>
+                    <h1>AlgoShop</h1>
+                    <span class="logo-tagline">Explore Plus+</span>
                 </div>
 
                 <div class="search-bar">
@@ -46,8 +46,52 @@
                     </div>
                 </div>
 
+                <!-- Fullscreen Category Menu (Moved inside to enable hover logic) -->
+                <div class="category-overlay" id="categoryOverlay">
+                    <div class="category-menu-content">
+                        <div class="category-column">
+                            <h4>Fashion & Lifestyle</h4>
+                            <ul class="category-list">
+                                <li><a href="#" class="category-item" data-category="Men's Clothing"><span class="icon">👕</span> Men's Wear</a></li>
+                                <li><a href="#" class="category-item" data-category="Women's Clothing"><span class="icon">👗</span> Women's Wear</a></li>
+                                <li><a href="#" class="category-item" data-category="Kids' Wear"><span class="icon">👶</span> Kids' Collection</a></li>
+                                <li><a href="#" class="category-item" data-category="Footwear"><span class="icon">👟</span> Footwear</a></li>
+                                <li><a href="#" class="category-item" data-category="Watches"><span class="icon">⌚</span> Watches</a></li>
+                            </ul>
+                        </div>
+                        <div class="category-column">
+                            <h4>Electronics & Gadgets</h4>
+                            <ul class="category-list">
+                                <li><a href="#" class="category-item" data-category="Mobiles"><span class="icon">📱</span> Smartphones</a></li>
+                                <li><a href="#" class="category-item" data-category="Laptops"><span class="icon">💻</span> Laptops</a></li>
+                                <li><a href="#" class="category-item" data-category="Audio"><span class="icon">🎧</span> Headphones & Audio</a></li>
+                                <li><a href="#" class="category-item" data-category="Cameras"><span class="icon">📷</span> Cameras</a></li>
+                                <li><a href="#" class="category-item" data-category="Accessories"><span class="icon">🔌</span> Tech Accessories</a></li>
+                            </ul>
+                        </div>
+                        <div class="category-column">
+                            <h4>Home & Kitchen</h4>
+                            <ul class="category-list">
+                                <li><a href="#" class="category-item" data-category="Home Decor"><span class="icon">🖼️</span> Home Decor</a></li>
+                                <li><a href="#" class="category-item" data-category="Furniture"><span class="icon">🛋️</span> Furniture</a></li>
+                                <li><a href="#" class="category-item" data-category="Kitchen Appliances"><span class="icon">🍳</span> Kitchen Gear</a></li>
+                                <li><a href="#" class="category-item" data-category="Home Lighting"><span class="icon">💡</span> Lighting</a></li>
+                            </ul>
+                        </div>
+                        <div class="category-column">
+                            <h4>Sports & Fitness</h4>
+                            <ul class="category-list">
+                                <li><a href="#" class="category-item" data-category="Gym Equipment"><span class="icon">🏋️</span> Gym Equipment</a></li>
+                                <li><a href="#" class="category-item" data-category="Sports Wear"><span class="icon">⚽</span> Sports Apparel</a></li>
+                                <li><a href="#" class="category-item" data-category="Outdoor"><span class="icon">🏕️</span> Outdoor & Camping</a></li>
+                                <li><a href="#" class="category-item" data-category="Cycle"><span class="icon">🚲</span> Bicycles</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="nav-actions">
-                    <a href="wishlist.html" class="nav-btn wishlist-btn" style="text-decoration: none;">
+                    <a href="wishlist.html" class="nav-btn wishlist-btn">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2">
                             <path
@@ -56,7 +100,7 @@
                         </svg>
                         <span>Wishlist</span>
                     </a>
-                    <a href="cart.html" class="nav-btn cart-btn" style="text-decoration: none;">
+                    <a href="cart.html" class="nav-btn cart-btn">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2">
                             <circle cx="9" cy="21" r="1"></circle>
@@ -71,38 +115,18 @@
         </div>
     </header>
 
-    <!-- Fullscreen Category Menu -->
-    <div class="category-overlay" id="categoryOverlay">
-        <div class="category-menu-content">
-            <div class="category-column">
-                <h4>Top Categories</h4>
-                <ul class="category-list">
-                    <li><a href="#" class="category-item" data-category="all"><span class="icon">📦</span> All
-                            Products</a></li>
-                    <li><a href="#" class="category-item" data-category="Electronics"><span class="icon">💻</span>
-                            Electronics</a></li>
-                    <li><a href="#" class="category-item" data-category="Fashion"><span class="icon">👕</span>
-                            Fashion</a></li>
-                </ul>
-            </div>
-            <div class="category-column">
-                <h4>Entertainment</h4>
-                <ul class="category-list">
-                    <li><a href="#" class="category-item" data-category="Audio"><span class="icon">🎧</span> Audio &
-                            Music</a></li>
-                    <li><a href="#" class="category-item" data-category="Electronics"><span class="icon">🎮</span>
-                            Gaming</a></li>
-                </ul>
-            </div>
-            <div class="category-column">
-                <h4>Home & Life</h4>
-                <ul class="category-list">
-                    <li><a href="#" class="category-item" data-category="Home Appliances"><span class="icon">🏠</span>
-                            Home Appliances</a></li>
-                    <li><a href="#" class="category-item" data-category="Electronics"><span class="icon">📱</span>
-                            Mobile Phones</a></li>
-                </ul>
-            </div>
+    <!-- Sub Header Nav -->
+    <div class="sub-header">
+        <div class="container">
+            <nav class="sub-header-nav">
+                <a href="#" class="sub-nav-item">Electronics</a>
+                <a href="#" class="sub-nav-item">Fashion</a>
+                <a href="#" class="sub-nav-item">Home</a>
+                <a href="#" class="sub-nav-item">Beauty</a>
+                <a href="#" class="sub-nav-item">Sports</a>
+                <a href="#" class="sub-nav-item">Grocery</a>
+                <a href="#" class="sub-nav-item" style="color: var(--secondary-color); font-weight: 700;">Offers</a>
+            </nav>
         </div>
     </div>
 
