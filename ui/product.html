@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
         content="View detailed product information, specifications, reviews, and purchase options.">
-    <title>Product Details - ShopVerse</title>
-    <link rel="stylesheet" href="style.css">
+    <title>AlgoProduct - Product</title>
+    <link rel="stylesheet" href="/styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
@@ -21,7 +21,7 @@
             <nav class="navbar">
                 <div class="logo">
                     <a href="index.html" style="text-decoration: none; color: inherit;">
-                        <h1>ShopVerse</h1>
+                        <h1>AlgoProduct</h1>
                         <span class="logo-tagline">Premium Collection</span>
                     </a>
                 </div>
@@ -38,7 +38,7 @@
                 </div>
 
                 <div class="nav-actions">
-                    <button class="nav-btn wishlist-btn">
+                    <a href="wishlist.html" class="nav-btn wishlist-btn" style="text-decoration: none;">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2">
                             <path
@@ -46,8 +46,8 @@
                             </path>
                         </svg>
                         <span>Wishlist</span>
-                    </button>
-                    <button class="nav-btn cart-btn">
+                    </a>
+                    <a href="cart.html" class="nav-btn cart-btn" style="text-decoration: none;">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2">
                             <circle cx="9" cy="21" r="1"></circle>
@@ -56,7 +56,7 @@
                         </svg>
                         <span>Cart</span>
                         <span class="cart-count">0</span>
-                    </button>
+                    </a>
                 </div>
             </nav>
         </div>
@@ -239,60 +239,11 @@
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>ShopVerse</h3>
-                    <p>Your trusted destination for premium products. Quality guaranteed, always.</p>
-                    <div class="social-links">
-                        <a href="#" class="social-link">Facebook</a>
-                        <a href="#" class="social-link">Twitter</a>
-                        <a href="#" class="social-link">Instagram</a>
-                    </div>
-                </div>
 
-                <div class="footer-section">
-                    <h4>Shop</h4>
-                    <ul class="footer-links">
-                        <li><a href="#">Electronics</a></li>
-                        <li><a href="#">Fashion</a></li>
-                        <li><a href="#">Home & Living</a></li>
-                        <li><a href="#">Beauty</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-section">
-                    <h4>Customer Service</h4>
-                    <ul class="footer-links">
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">Track Order</a></li>
-                        <li><a href="#">Returns</a></li>
-                        <li><a href="#">FAQs</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-section">
-                    <h4>About</h4>
-                    <ul class="footer-links">
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Service</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <p>&copy; 2024 ShopVerse. All rights reserved. | Developed for Algonive Internship - Task 2</p>
-            </div>
-        </div>
-    </footer>
 
     <!-- Scripts -->
-    <script src="data.js"></script>
-    <script src="script.js"></script>
+    <script src="/scripts/data.js"></script>
+    <script src="/scripts/script.js"></script>
 </body>
 
 </html>

@@ -1,121 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Shop the latest electronics, fashion, and home appliances at unbeatable prices. Premium quality products with fast delivery.">
-    <title>ShopVerse - Your Premium Online Shopping Destination</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="description"
+        content="Shop the latest electronics, fashion, and home appliances at unbeatable prices. Premium quality products with fast delivery.">
+    <title>AlgoProduct - Your Premium Online Shopping Destination</title>
+    <link rel="stylesheet" href="/styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
     <!-- Header -->
     <header class="header">
         <div class="container">
             <nav class="navbar">
                 <div class="logo">
-                    <h1>ShopVerse</h1>
+                    <h1>AlgoProduct</h1>
                     <span class="logo-tagline">Premium Collection</span>
                 </div>
-                
+
                 <div class="search-bar">
-                    <input type="text" id="searchInput" placeholder="Search for products, brands and more..." class="search-input">
-                    <button class="search-btn">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="11" cy="11" r="8"></circle>
-                            <path d="m21 21-4.35-4.35"></path>
+                    <button class="menu-trigger" id="menuTrigger" title="Categories">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
                         </svg>
                     </button>
+                    <div class="search-input-wrapper">
+                        <input type="text" id="searchInput" placeholder="Search for products, brands and more..."
+                            class="search-input">
+                        <button class="search-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.35-4.35"></path>
+                            </svg>
+                        </button>
+                    </div>
                 </div>
-                
+
                 <div class="nav-actions">
-                    <button class="nav-btn wishlist-btn">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    <a href="wishlist.html" class="nav-btn wishlist-btn" style="text-decoration: none;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path
+                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                            </path>
                         </svg>
                         <span>Wishlist</span>
-                    </button>
-                    <button class="nav-btn cart-btn">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    </a>
+                    <a href="cart.html" class="nav-btn cart-btn" style="text-decoration: none;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
                             <circle cx="9" cy="21" r="1"></circle>
                             <circle cx="20" cy="21" r="1"></circle>
                             <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
                         </svg>
                         <span>Cart</span>
                         <span class="cart-count">0</span>
-                    </button>
+                    </a>
                 </div>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h2 class="hero-title">Discover Premium Products</h2>
-                <p class="hero-subtitle">Shop the latest collection of electronics, fashion, and home essentials</p>
-                <div class="hero-stats">
-                    <div class="stat">
-                        <span class="stat-number">10,000+</span>
-                        <span class="stat-label">Products</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">50,000+</span>
-                        <span class="stat-label">Happy Customers</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">100%</span>
-                        <span class="stat-label">Authentic</span>
+    <!-- Fullscreen Category Menu -->
+    <div class="category-overlay" id="categoryOverlay">
+        <div class="category-menu-content">
+            <div class="category-column">
+                <h4>Top Categories</h4>
+                <ul class="category-list">
+                    <li><a href="#" class="category-item" data-category="all"><span class="icon">📦</span> All
+                            Products</a></li>
+                    <li><a href="#" class="category-item" data-category="Electronics"><span class="icon">💻</span>
+                            Electronics</a></li>
+                    <li><a href="#" class="category-item" data-category="Fashion"><span class="icon">👕</span>
+                            Fashion</a></li>
+                </ul>
+            </div>
+            <div class="category-column">
+                <h4>Entertainment</h4>
+                <ul class="category-list">
+                    <li><a href="#" class="category-item" data-category="Audio"><span class="icon">🎧</span> Audio &
+                            Music</a></li>
+                    <li><a href="#" class="category-item" data-category="Electronics"><span class="icon">🎮</span>
+                            Gaming</a></li>
+                </ul>
+            </div>
+            <div class="category-column">
+                <h4>Home & Life</h4>
+                <ul class="category-list">
+                    <li><a href="#" class="category-item" data-category="Home Appliances"><span class="icon">🏠</span>
+                            Home Appliances</a></li>
+                    <li><a href="#" class="category-item" data-category="Electronics"><span class="icon">📱</span>
+                            Mobile Phones</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dynamic Hero Carousel -->
+    <section class="hero-carousel">
+        <div class="carousel-container">
+            <div class="carousel-track" id="carouselTrack">
+                <!-- Slide 1 -->
+                <div class="carousel-slide active">
+                    <img src="../assets/hero/iphone.png" alt="iPhone 15 Pro Max">
+                    <div class="container">
+                        <div class="slide-content">
+                            <span class="slide-badge">New Launch</span>
+                            <h2 class="slide-title">iPhone 15 Pro Max</h2>
+                            <p class="slide-description">Experience the power of Titanium. Limitless performance.</p>
+                            <div class="slide-price">From ₹1,34,900*</div>
+                        </div>
                     </div>
                 </div>
+                <!-- Slide 2 -->
+                <div class="carousel-slide">
+                    <img src="../assets/hero/fashion.png" alt="Fashion Collection">
+                    <div class="container">
+                        <div class="slide-content">
+                            <span class="slide-badge">Winter 2024</span>
+                            <h2 class="slide-title">Urban Luxe Fashion</h2>
+                            <p class="slide-description">Redefine your style with our exclusive streetwear collection.
+                            </p>
+                            <div class="slide-price">Up to 40% OFF</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="carousel-slide">
+                    <img src="../assets/hero/audio.png" alt="Premium Audio">
+                    <div class="container">
+                        <div class="slide-content">
+                            <span class="slide-badge">Exclusive Offer</span>
+                            <h2 class="slide-title">Sony Wireless Audio</h2>
+                            <p class="slide-description">Industry-leading noise cancellation. Pure sound, no strings.
+                            </p>
+                            <div class="slide-price">Special Price ₹19,990</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 4 -->
+                <div class="carousel-slide">
+                    <img src="../assets/hero/macbook.png" alt="MacBook Air M2">
+                    <div class="container">
+                        <div class="slide-content">
+                            <span class="slide-badge">Back to School</span>
+                            <h2 class="slide-title">MacBook Air M2</h2>
+                            <p class="slide-description">Supercharged by M2 chip. All-day battery life.</p>
+                            <div class="slide-price">Only ₹94,900*</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 5 -->
+                <div class="carousel-slide">
+                    <img src="../assets/hero/watch.png" alt="Luxury Watches">
+                    <div class="container">
+                        <div class="slide-content">
+                            <span class="slide-badge">Timeless Elegance</span>
+                            <h2 class="slide-title">Masterpiece Series</h2>
+                            <p class="slide-description">Precision meets luxury. A statement for every occasion.</p>
+                            <div class="slide-price">Starting ₹45,000</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 6 -->
+                <div class="carousel-slide">
+                    <img src="../assets/hero/gaming.png" alt="Gaming Setup">
+                    <div class="container">
+                        <div class="slide-content">
+                            <span class="slide-badge">Pro Gaming</span>
+                            <h2 class="slide-title">Next-Gen Gaming</h2>
+                            <p class="slide-description">Immersive visuals and blazing speed. Level up your setup.</p>
+                            <div class="slide-price">Explore Best Deals</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-indicators" id="carouselIndicators">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
             </div>
         </div>
     </section>
 
-    <!-- Filter Section -->
-    <section class="filters">
-        <div class="container">
-            <div class="filter-bar">
-                <div class="filter-group">
-                    <label class="filter-label">Category:</label>
-                    <select id="categoryFilter" class="filter-select">
-                        <option value="all">All Categories</option>
-                        <option value="Electronics">Electronics</option>
-                        <option value="Fashion">Fashion</option>
-                        <option value="Audio">Audio</option>
-                        <option value="Home Appliances">Home Appliances</option>
-                    </select>
-                </div>
-                
-                <div class="filter-group">
-                    <label class="filter-label">Sort By:</label>
-                    <select id="sortFilter" class="filter-select">
-                        <option value="featured">Featured</option>
-                        <option value="price-low">Price: Low to High</option>
-                        <option value="price-high">Price: High to Low</option>
-                        <option value="rating">Highest Rated</option>
-                    </select>
-                </div>
-                
-                <div class="filter-group">
-                    <label class="filter-label">Price Range:</label>
-                    <select id="priceFilter" class="filter-select">
-                        <option value="all">All Prices</option>
-                        <option value="0-5000">Under ₹5,000</option>
-                        <option value="5000-25000">₹5,000 - ₹25,000</option>
-                        <option value="25000-50000">₹25,000 - ₹50,000</option>
-                        <option value="50000-100000">₹50,000 - ₹1,00,000</option>
-                        <option value="100000-999999">Above ₹1,00,000</option>
-                    </select>
-                </div>
-                
-                <button class="filter-reset" id="resetFilters">Reset Filters</button>
-            </div>
-        </div>
-    </section>
+
 
     <!-- Products Grid -->
     <main class="main-content">
@@ -124,11 +205,11 @@
                 <h2 class="section-title">Featured Products</h2>
                 <p class="products-count" id="productsCount">Showing 8 products</p>
             </div>
-            
+
             <div class="products-grid" id="productsGrid">
                 <!-- Products will be dynamically loaded here -->
             </div>
-            
+
             <div class="no-products" id="noProducts" style="display: none;">
                 <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
                     <circle cx="12" cy="12" r="10"></circle>
@@ -154,7 +235,7 @@
                         <a href="#" class="social-link">Instagram</a>
                     </div>
                 </div>
-                
+
                 <div class="footer-section">
                     <h4>Shop</h4>
                     <ul class="footer-links">
@@ -164,7 +245,7 @@
                         <li><a href="#">Beauty</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-section">
                     <h4>Customer Service</h4>
                     <ul class="footer-links">
@@ -174,7 +255,7 @@
                         <li><a href="#">FAQs</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-section">
                     <h4>About</h4>
                     <ul class="footer-links">
@@ -185,15 +266,16 @@
                     </ul>
                 </div>
             </div>
-            
+
             <div class="footer-bottom">
-                <p>&copy; 2024 ShopVerse. All rights reserved. | Developed for Algonive Internship - Task 2</p>
+                <p>&copy; 202 AlgoProduct. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <!-- Scripts -->
-    <script src="data.js"></script>
-    <script src="script.js"></script>
+    <script src="/scripts/data.js"></script>
+    <script src="/scripts/script.js"></script>
 </body>
+
 </html>
